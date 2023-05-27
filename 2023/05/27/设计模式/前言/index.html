@@ -16,21 +16,24 @@
   <meta name="author" content="">
   <meta name="keywords" content="前端 JavaScript html css webpack git">
   
-    <meta name="description" content="代理模式我们来回顾上一章策略模式留下的问题：  假设公司的绩效等级分为 A，B，C，D，E 年终奖对应的绩点为 2，1.8，1.5，1.1，0.8。假设年终基数为 base，年终奖为：年终基数 * 绩点。已知绩效等级，求员工的年终奖。  12345678910111213&#x2F;&#x2F; 绩效等级和绩点的映射关系const levelToCredit &#x3D; &amp;#123;    A: 2,    B: 1.8">
+    <meta name="description" content="几乎每一门语言都会使用一定的设计模式来编写代码，JavaScript 也不例外。一些刚入门的开发者在面对庞大的前端知识体系时，看到大家都在说设计模式也非常重要，也跟着学，然而看完了还是很模糊设计模式存在的意义和及其使用场景。本系列文章会尽可能把设计模式存在的意义说的通俗易懂。 什么是设计模式 在代码世界里，代码长时间堆积就像长时间不收拾的房间，久而久之房间就会变得杂乱无章，寻找或者是摆放新的物件都">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3.代理模式">
-<meta property="og:url" content="https://lxfljw.github.io/2023/05/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/3-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:title" content="设计模式-前言.md">
+<meta property="og:url" content="https://lxfljw.github.io/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/index.html">
 <meta property="og:site_name" content="码上秃的个人网站">
-<meta property="og:description" content="代理模式我们来回顾上一章策略模式留下的问题：  假设公司的绩效等级分为 A，B，C，D，E 年终奖对应的绩点为 2，1.8，1.5，1.1，0.8。假设年终基数为 base，年终奖为：年终基数 * 绩点。已知绩效等级，求员工的年终奖。  12345678910111213&#x2F;&#x2F; 绩效等级和绩点的映射关系const levelToCredit &#x3D; &amp;#123;    A: 2,    B: 1.8">
+<meta property="og:description" content="几乎每一门语言都会使用一定的设计模式来编写代码，JavaScript 也不例外。一些刚入门的开发者在面对庞大的前端知识体系时，看到大家都在说设计模式也非常重要，也跟着学，然而看完了还是很模糊设计模式存在的意义和及其使用场景。本系列文章会尽可能把设计模式存在的意义说的通俗易懂。 什么是设计模式 在代码世界里，代码长时间堆积就像长时间不收拾的房间，久而久之房间就会变得杂乱无章，寻找或者是摆放新的物件都">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-22T23:51:39.000Z">
+<meta property="og:image" content="https://lxfljw.github.io/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/%E4%B8%8D%E6%95%B4%E9%BD%90.jpeg">
+<meta property="og:image" content="https://lxfljw.github.io/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/%E6%95%B4%E9%BD%90.jpeg">
+<meta property="article:published_time" content="2023-05-27T12:14:27.000Z">
 <meta property="article:modified_time" content="2023-05-27T05:05:25.516Z">
 <meta property="article:tag" content="前端 JavaScript html css webpack git">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lxfljw.github.io/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/%E4%B8%8D%E6%95%B4%E9%BD%90.jpeg">
   
   
   
-  <title>3.代理模式 - 码上秃的个人网站</title>
+  <title>设计模式-前言.md - 码上秃的个人网站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="3.代理模式"></span>
+            <span id="subtitle" data-typed-text="设计模式-前言.md"></span>
           
         </div>
 
@@ -207,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-22 23:51" pubdate>
-          2023年5月22日 晚上
+        <time datetime="2023-05-27 12:14" pubdate>
+          2023年5月27日 中午
         </time>
       </span>
     
@@ -219,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k 字
+          788 字
         
       </span>
     
@@ -230,7 +233,7 @@
         
         
         
-          23 分钟
+          7 分钟
         
       </span>
     
@@ -268,29 +271,18 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">3.代理模式</h1>
+            <h1 style="display: none">设计模式-前言.md</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><p><strong>我们来回顾上一章策略模式留下的问题：</strong></p>
-<br>
-假设公司的绩效等级分为 A，B，C，D，E 年终奖对应的绩点为 2，1.8，1.5，1.1，0.8。假设年终基数为 base，年终奖为：年终基数 * 绩点。已知绩效等级，求员工的年终奖。
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 绩效等级和绩点的映射关系</span><br><span class="hljs-keyword">const</span> levelToCredit = &#123;<br>    <span class="hljs-attr">A</span>: <span class="hljs-number">2</span>,<br>    <span class="hljs-attr">B</span>: <span class="hljs-number">1.8</span>,<br>    <span class="hljs-attr">C</span>: <span class="hljs-number">1.5</span>,<br>    <span class="hljs-attr">D</span>: <span class="hljs-number">1.1</span>,<br>    <span class="hljs-attr">E</span>: <span class="hljs-number">0.8</span><br>&#125;<br><br><span class="hljs-comment">// 年终奖计算逻辑</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">getsalary</span>(<span class="hljs-params">base, level</span>) &#123;<br>  <span class="hljs-keyword">return</span> levelToCredit[level] * base<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>代理模式，有点像经纪人的角色，可以完成非核心事务。假设我们要使用一个函数在页面加载一张图片，代码应该是这样的：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> imgNode = (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> imgNode = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;img&#x27;</span>)<br>  <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(imgNode)<br>  <span class="hljs-keyword">return</span> &#123;<br>    <span class="hljs-attr">setSrc</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">src</span>) &#123;<br>      imgNode.<span class="hljs-property">src</span> = src<br>    &#125;<br>  &#125;<br>&#125;)()<br><br>imgNode.<span class="hljs-title function_">setSrc</span>(<span class="hljs-string">&#x27;https://img.com/banner.png&#x27;</span>) <span class="hljs-comment">// 加载图片</span><br></code></pre></td></tr></table></figure>
-
-<p>事实上，我们调用 setSrc 的时候，会发起一个网络请求，在图片资源返回前，图片是空白的，为了避免图片返回的时候闪烁，我们为图片增加 loading 的情况。假设一开始直接修改上述代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> imgNode = (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 真正展示图片的节点</span><br>  <span class="hljs-keyword">const</span> imgNode = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;img&#x27;</span>)<br>  <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(imgNode)<br>  <span class="hljs-comment">// 代理节点</span><br>  <span class="hljs-keyword">var</span> proxyImg = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;img&#x27;</span>)<br>  <span class="hljs-comment">// 当代理图片加载完成的时候，把图片的链接赋值给展示节点</span><br>  proxyImg.<span class="hljs-property">onload</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>    imgNode.<span class="hljs-title function_">setSrc</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">src</span>)<br>  &#125;<br>  <span class="hljs-keyword">return</span> &#123;<br>    <span class="hljs-attr">setSrc</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">src</span>) &#123;<br>      <span class="hljs-comment">// 预先loading</span><br>      imgNode.<span class="hljs-property">src</span> = <span class="hljs-string">&#x27;https://img.com/loading.gif&#x27;</span><br>      <span class="hljs-comment">// 代理节点开始请求图片数据</span><br>      proxyImg.<span class="hljs-property">src</span> = src<br>    &#125;<br>  &#125;<br>&#125;)()<br><br>imgNode.<span class="hljs-title function_">setSrc</span>(<span class="hljs-string">&#x27;https://img.com/banner.png&#x27;</span>) <span class="hljs-comment">// 加载图片</span><br></code></pre></td></tr></table></figure>
-
-<p>这样的代码相信是很多人的第一选择，包括我开始想到的方案也是这样的，那这样的代码有什么缺点呢？<br>在未来假设网速快到极致，这样 loading 占位的图片反而导致页面闪烁，这时候如果想把代理的方式去掉，就要修改函数的逻辑，那这样就违反了开放封闭的原则。<br>并且代理和创建节点，这两个职责耦合到了一个函数，也违反单一职责原则。不过大家现在可能仅仅知道我们要遵守这些原则，至于为什么，比较少人考究，也很少文章详细解释为什么。<br>以我个人的开发经验来说，可以这么理解：</p>
-<p>假设某个需求里面有 A 和 B 两个功能，B 功能是帮 A 做一些事；小王同学把这两个功能都写在了函数 F 里，某一天，产品要砍掉 B 这个功能，然后这时小王离职了，小李接替他的工作来砍掉B，小李看完代码发现砍掉 B 得修改整个 F 函数，小李不仅要看懂函数 F，还要把 B 功能从 F 里面剔除，并且最后还要保证不影响 A 功能。这么一顿操作，小李感觉整个人都不好了，因为他只是想砍掉 B。<br>不幸的是他还要同时了解 A 功能，F 函数的代码接口以及修改。这样的开发模式在大型应用里面时非常致命的，容易导致整个项目稳定性过差，并且开发的代码容易成为相互的心智负担。</p>
-<p>假设我们使用代理模式把 B 分离出去，回到上面的例子，首先我们是没有代理的代码，imgNode 函数负责生成一张图片：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs js"><br><br><span class="hljs-keyword">var</span> imgNode = (<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 创建展示的图片节点</span><br>  <span class="hljs-keyword">const</span> imgNode = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;img&#x27;</span>)<br>  <span class="hljs-comment">// 挂载到body</span><br>  <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(imgNode)<br>  <span class="hljs-comment">// 暴露setSrc</span><br>  <span class="hljs-keyword">return</span> &#123;<br>    <span class="hljs-attr">setSrc</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">src</span>) &#123;<br>      imgNode.<span class="hljs-property">src</span> = src<br>    &#125;<br>  &#125;<br>&#125;)()<br><br><br><span class="hljs-keyword">var</span> proxyImg = (<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>  <span class="hljs-comment">// 图片节点</span><br>  <span class="hljs-keyword">let</span> node = <span class="hljs-literal">null</span><br>  <span class="hljs-comment">// 创建代理节点</span><br>  <span class="hljs-keyword">const</span> proxyImg = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;img&#x27;</span>)<br>  <span class="hljs-comment">// 图片加载完成 把node设置为代理图片的src</span><br>  proxyImg.<span class="hljs-property">onload</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>    node.<span class="hljs-title function_">setSrc</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">src</span>)<br>  &#125;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">imgNode</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      <span class="hljs-attr">setSrc</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">src</span>) &#123;<br>        <span class="hljs-comment">// 使用代理图片节点请求</span><br>        proxyImg.<span class="hljs-property">src</span> = src<br>        <span class="hljs-comment">// 缓存 node</span><br>        node = imgNode<br>        <span class="hljs-comment">// 把展示图片节点的图片设置为 loading</span><br>        img.<span class="hljs-title function_">setSrc</span>(<span class="hljs-string">&#x27;https://img.com/loading.png&#x27;</span>)<br>      &#125;<br>  &#125;<br>  &#125;<br>&#125;)()<br><br><span class="hljs-keyword">const</span> img = <span class="hljs-title function_">proxyImg</span>(imgNode)<br>img.<span class="hljs-title function_">setSrc</span>(<span class="hljs-string">&#x27;https://img.com/banner.png&#x27;</span>)<br></code></pre></td></tr></table></figure>
-
-<p>这里 proxyImg 这个函数完全是一个锦上添花的功能，假设未来网速快到一定程度，这种     loading 可以淘汰，那我们不需要代理也能正常使用，把  <code>img.setSrc</code> 换成 <code>imgNode.setSrc</code> 实现功能。那么代理模式有什么特点呢，首先实现了和原功能一样的 api 这样在取消使用代理模式的时候也不会因为 api 的差异性而进行大改。</p>
+                <p>几乎每一门语言都会使用一定的设计模式来编写代码，<code>JavaScript</code> 也不例外。一些刚入门的开发者在面对庞大的前端知识体系时，看到大家都在说设计模式也非常重要，也跟着学，然而看完了还是很模糊设计模式存在的意义和及其使用场景。本系列文章会尽可能把设计模式存在的意义说的通俗易懂。</p>
+<h1 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h1><p> 在代码世界里，代码长时间堆积就像长时间不收拾的房间，久而久之房间就会变得杂乱无章，寻找或者是摆放新的物件都非常的费脑筋。</p>
+<p><img src="/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/%E4%B8%8D%E6%95%B4%E9%BD%90.jpeg" srcset="/img/loading.gif" lazyload alt="不整齐的房间"></p>
+<p>此时收拾房间就变得非常有必要，比如购置收纳盒，衣柜，桌子用于摆放原来无处可放的物件。柜子等工具就是代码里面的设计模式，是多年来大家实践得来的经验，可以使得我们的代码看起来井然有序。</p>
+<p><img src="/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/%E6%95%B4%E9%BD%90.jpeg" srcset="/img/loading.gif" lazyload alt="整齐的房间"></p>
+<p> JavaScript 需要单独拿出来说设计模式是因为其有许多特性，例如使用<code>原型链委托来实现类的继承</code>，这一点就和传统的面对对象编程的语言就有不同，我们可以把原型链和设计模式结合，探究JavaScript里面的设计模式如何编写；又如其强大的函数功能，实现 <code>AOP</code> (面向切面编程，实则是把一个函数动态织入到另外一个函数；把函数当作参数，执行时机由其所在的函数决定) 是非常简单的事情。</p>
+<h1 id="为什么需要设计模式"><a href="#为什么需要设计模式" class="headerlink" title="为什么需要设计模式"></a>为什么需要设计模式</h1><p>在开始设计模式之前，你可能需要储备一些知识，如函数 <code>开放封闭原则</code>，<code>单一职责原则</code> 等等，这些知识会让你更好的理解未来的例子为什么需要这么写。假设一个函数已经有很多分支条件，未来如果有更多的分支，我们需要扩展这个函数，修改里面的代码，这违反了函数开放封闭原则（对扩展开放，对修改封闭），因此需要使用一些前人总结出来的经验来编写代码使得代码更加易于维护和健壮。<br>在你使用一段设计模式的代码时，你必须确认这样不会大大增加程序的复杂程度，如果为了设计模式而使用设计模式，是非常不正确的决定。我们应该在正确的场景使用设计模式，而不是滥用设计模式使得程序变成一个负担。<br><strong>下一篇文章，我们将会学习第一个设计模式：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kuiloupi0907/article/details/116504164">单例模式</a>。</strong></p>
 
                 
               </div>
@@ -329,15 +321,15 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>3.代理模式</div>
-      <div>https://lxfljw.github.io/2023/05/22/设计模式/3-单例模式/</div>
+      <div>设计模式-前言.md</div>
+      <div>https://lxfljw.github.io/2023/05/27/设计模式/前言/</div>
     </div>
     <div class="license-meta">
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月22日</div>
+          <div>2023年5月27日</div>
         </div>
       
       
@@ -369,18 +361,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" title="2.策略模式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2.策略模式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/4-%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/" title="4.发布订阅模式">
-                        <span class="hidden-mobile">4.发布订阅模式</span>
+                      <a href="/2023/05/22/Git/%E5%A4%9A%E4%BB%93%E5%BA%93%E5%90%88%E5%B9%B6/" title="多仓库合并">
+                        <span class="hidden-mobile">多仓库合并</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
