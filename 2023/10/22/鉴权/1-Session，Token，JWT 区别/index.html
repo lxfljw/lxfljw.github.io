@@ -16,24 +16,21 @@
   <meta name="author" content="">
   <meta name="keywords" content="前端 JavaScript html css webpack git">
   
-    <meta name="description" content="几乎每一门语言都会使用一定的设计模式来编写代码，JavaScript 也不例外。一些刚入门的开发者在面对庞大的前端知识体系时，看到大家都在说设计模式也非常重要，也跟着学，然而看完了还是很模糊设计模式存在的意义和及其使用场景。本系列文章会尽可能把设计模式存在的意义说的通俗易懂。 什么是设计模式 在代码世界里，代码长时间堆积就像长时间不收拾的房间，久而久之房间就会变得杂乱无章，寻找或者是摆放新的物件都">
+    <meta name="description" content="一、SessionSession 是服务器端使用的一种记录客户端状态的机制，客户端通过 SessionID 来访问服务器端的资源，SessionID 一般是存在 Cookie 中的，也可以通过 URL 传递，但是不推荐这样做。Session 模式一般如下步骤：  用户未登录，输入账号密码，提交到服务器端。 服务器端验证账号密码，如果正确，生成 SessionID，将用户信息以及 SessionID">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式-前言.md">
-<meta property="og:url" content="https://lxfljw.github.io/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/index.html">
+<meta property="og:title" content="1.1-Session，Token，JWT 原理解析">
+<meta property="og:url" content="https://lxfljw.github.io/2023/10/22/%E9%89%B4%E6%9D%83/1-Session%EF%BC%8CToken%EF%BC%8CJWT%20%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="码上秃的个人网站">
-<meta property="og:description" content="几乎每一门语言都会使用一定的设计模式来编写代码，JavaScript 也不例外。一些刚入门的开发者在面对庞大的前端知识体系时，看到大家都在说设计模式也非常重要，也跟着学，然而看完了还是很模糊设计模式存在的意义和及其使用场景。本系列文章会尽可能把设计模式存在的意义说的通俗易懂。 什么是设计模式 在代码世界里，代码长时间堆积就像长时间不收拾的房间，久而久之房间就会变得杂乱无章，寻找或者是摆放新的物件都">
+<meta property="og:description" content="一、SessionSession 是服务器端使用的一种记录客户端状态的机制，客户端通过 SessionID 来访问服务器端的资源，SessionID 一般是存在 Cookie 中的，也可以通过 URL 传递，但是不推荐这样做。Session 模式一般如下步骤：  用户未登录，输入账号密码，提交到服务器端。 服务器端验证账号密码，如果正确，生成 SessionID，将用户信息以及 SessionID">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lxfljw.github.io/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/%E4%B8%8D%E6%95%B4%E9%BD%90.jpeg">
-<meta property="og:image" content="https://lxfljw.github.io/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/%E6%95%B4%E9%BD%90.jpeg">
-<meta property="article:published_time" content="2023-05-27T12:14:27.000Z">
+<meta property="article:published_time" content="2023-10-22T23:51:39.000Z">
 <meta property="article:modified_time" content="2023-10-22T05:23:53.020Z">
 <meta property="article:tag" content="前端 JavaScript html css webpack git">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lxfljw.github.io/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/%E4%B8%8D%E6%95%B4%E9%BD%90.jpeg">
   
   
   
-  <title>设计模式-前言.md - 码上秃的个人网站</title>
+  <title>1.1-Session，Token，JWT 原理解析 - 码上秃的个人网站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="设计模式-前言.md"></span>
+            <span id="subtitle" data-typed-text="1.1-Session，Token，JWT 原理解析"></span>
           
         </div>
 
@@ -210,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-27 12:14" pubdate>
-          2023年5月27日 中午
+        <time datetime="2023-10-22 23:51" pubdate>
+          2023年10月22日 晚上
         </time>
       </span>
     
@@ -222,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          788 字
+          1.8k 字
         
       </span>
     
@@ -233,7 +230,7 @@
         
         
         
-          7 分钟
+          16 分钟
         
       </span>
     
@@ -271,18 +268,55 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">设计模式-前言.md</h1>
+            <h1 style="display: none">1.1-Session，Token，JWT 原理解析</h1>
             
             
               <div class="markdown-body">
                 
-                <p>几乎每一门语言都会使用一定的设计模式来编写代码，<code>JavaScript</code> 也不例外。一些刚入门的开发者在面对庞大的前端知识体系时，看到大家都在说设计模式也非常重要，也跟着学，然而看完了还是很模糊设计模式存在的意义和及其使用场景。本系列文章会尽可能把设计模式存在的意义说的通俗易懂。</p>
-<h1 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h1><p> 在代码世界里，代码长时间堆积就像长时间不收拾的房间，久而久之房间就会变得杂乱无章，寻找或者是摆放新的物件都非常的费脑筋。</p>
-<p><img src="/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/%E4%B8%8D%E6%95%B4%E9%BD%90.jpeg" srcset="/img/loading.gif" lazyload alt="不整齐的房间"></p>
-<p>此时收拾房间就变得非常有必要，比如购置收纳盒，衣柜，桌子用于摆放原来无处可放的物件。柜子等工具就是代码里面的设计模式，是多年来大家实践得来的经验，可以使得我们的代码看起来井然有序。</p>
-<p><img src="/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/%E6%95%B4%E9%BD%90.jpeg" srcset="/img/loading.gif" lazyload alt="整齐的房间"></p>
-<p> JavaScript 需要单独拿出来说设计模式是因为其有许多特性，例如使用<code>原型链委托来实现类的继承</code>，这一点就和传统的面对对象编程的语言就有不同，我们可以把原型链和设计模式结合，探究JavaScript里面的设计模式如何编写；又如其强大的函数功能，实现 <code>AOP</code> (面向切面编程，实则是把一个函数动态织入到另外一个函数；把函数当作参数，执行时机由其所在的函数决定) 是非常简单的事情。</p>
-<h1 id="为什么需要设计模式"><a href="#为什么需要设计模式" class="headerlink" title="为什么需要设计模式"></a>为什么需要设计模式</h1><p>在开始设计模式之前，你可能需要储备一些知识，如函数 <code>开放封闭原则</code>，<code>单一职责原则</code> 等等，这些知识会让你更好的理解未来的例子为什么需要这么写。假设一个函数已经有很多分支条件，未来如果有更多的分支，我们需要扩展这个函数，修改里面的代码，这违反了函数开放封闭原则（对扩展开放，对修改封闭），因此需要使用一些前人总结出来的经验来编写代码使得代码更加易于维护和健壮。<br>在你使用一段设计模式的代码时，你必须确认这样不会大大增加程序的复杂程度，如果为了设计模式而使用设计模式，是非常不正确的决定。我们应该在正确的场景使用设计模式，而不是滥用设计模式使得程序变成一个负担。<br><strong>下一篇文章，我们将会学习第一个设计模式：<a target="_blank" rel="noopener" href="https://blog.csdn.net/kuiloupi0907/article/details/116504164">单例模式</a>。</strong></p>
+                <h1 id="一、Session"><a href="#一、Session" class="headerlink" title="一、Session"></a>一、Session</h1><p>Session 是服务器端使用的一种记录客户端状态的机制，客户端通过 SessionID 来访问服务器端的资源，SessionID 一般是存在 Cookie 中的，也可以通过 URL 传递，但是不推荐这样做。<br>Session 模式一般如下步骤：</p>
+<ol>
+<li>用户未登录，输入账号密码，提交到服务器端。</li>
+<li>服务器端验证账号密码，如果正确，生成 SessionID，将用户信息以及 SessionID 保存到服务器端，通过 Set-Cookie 请求头设置 cookie 到客户端。</li>
+<li>客户端收到响应后，保存 cookie，下次请求时，自动带上 cookie。</li>
+</ol>
+<p><strong>缺点</strong></p>
+<ol>
+<li>在遭受 DDOS 攻击时，服务器端需要保存大量的 Session 信息，会消耗大量的内存。</li>
+<li>Session 信息保存在服务器端，如果服务器宕机，会丢失所有的 Session 信息，用户需要重新登录。</li>
+<li>Session 信息保存在内存中，如果有多台服务器，用户的 Session 信息无法同步。</li>
+<li>XSS 攻击，如果用户的浏览器存在 XSS 漏洞，攻击者可以拿到用户的 Session 信息，然后伪造用户的 cookie，从而可以伪造用户的身份。</li>
+<li>CSRF 攻击，攻击者可以伪造用户的请求，从而可以拿到用户的 Session 信息，然后伪造用户的 cookie，从而可以伪造用户的身份。</li>
+</ol>
+<h1 id="二、Token"><a href="#二、Token" class="headerlink" title="二、Token"></a>二、Token</h1><p>Token 是一种客户端认证方式，客户端通过用户名密码请求服务器，服务器验证通过后，返回 Token，客户端收到 Token 后，保存到客户端，下次请求时，自动带上 Token，服务器端通过校验 Token 来验证用户身份。</p>
+<p>Token 模式一般如下步骤：</p>
+<ol>
+<li>用户未登录，输入账号密码，提交到服务器端。</li>
+<li>服务器端验证账号密码，如果正确，生成 Token，将 Token 保存到服务器端，通过 Set-Cookie 请求头设置 cookie 到客户端或者响应体返回，用户自行设置到 localStorage。</li>
+<li>客户端收到响应后，保存 cookie 或者 localStorage，下次请求时，自动带上 cookie 或者 localStorage。</li>
+<li>客户端每次请求时，通过 Authorization 请求头或者 URL 传递 Token。</li>
+<li>服务器端通过 Authorization 请求头或者 URL 传递 Token，验证 Token，如果验证通过，返回数据，如果验证失败，返回 401 状态码。</li>
+</ol>
+<p><strong>缺点</strong></p>
+<ol>
+<li>Token 需要存储到服务端，如果有多台服务器，需要同步 Token。</li>
+<li>Token 一般是不会过期的，如果 Token 被盗取，攻击者可以一直使用 Token，除非用户修改密码或者主动注销 Token。</li>
+</ol>
+<h1 id="三、JWT"><a href="#三、JWT" class="headerlink" title="三、JWT"></a>三、JWT</h1><p>JWT 是一种 Token 的实现方式，JWT 的全称是 JSON Web Token，是一种轻量级的身份认证和信息交互方式，可以在用户和服务器之间传递安全可靠的信息。<br>JWT 分为三部分，分别是 Header，Payload 和 Signature，三部分之间用 . 分割，如下所示：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Header</span>.Payload.Signature<br></code></pre></td></tr></table></figure>
+<p>Header 存储加密的算法，Payload 存储用户信息，Signature 是对 Header 和 Payload 的签名，用于验证数据的完整性，Payload 一般存储 userId，用于校验用户身份，Signature 是防篡改的，如果数据被篡改，Signature 会验证失败。比如用户 id 被攻击者获取，攻击者如果伪造 Signature，服务器端会验证失败，从而防止攻击者伪造用户身份。这样原来，后端无需存储 JWT，只需使用密码学原理，对签名进行校验即可安全的验证用户身份，未来服务器扩容，只要保证密钥一致即可，无需同步用户登录状态。</p>
+<p>JWT 步骤如下：</p>
+<ol>
+<li>用户未登录，输入账号密码，提交到服务器端。</li>
+<li>服务端校验账号密码，如果正确，则返回 JWT Token，客户端收到响应后，保存到 localStorage。</li>
+<li>客户端每次请求时，通过 Authorization 请求头或者 URL 传递 Token。</li>
+<li>服务器端通过 Authorization 请求头或者 URL 传递 Token，验证 Token，如果验证通过，返回数据，如果验证失败，返回 401 状态码。</li>
+<li>客户端每次请求时，需要带上 Token，服务器端通过校验 Token 来验证用户身份。</li>
+</ol>
+<p><strong>缺点</strong></p>
+<ol>
+<li>JWT 一般是不会过期的，如果 Token 被盗取，攻击者可以一直使用 Token，除非用户修改密码或者主动注销 Token。</li>
+<li>JWT 一般存储在 localStorage 中，如果用户的浏览器存在 XSS 漏洞，攻击者可以拿到用户的 JWT，然后伪造用户的身份。</li>
+</ol>
 
                 
               </div>
@@ -301,7 +335,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="category-chain-item">设计模式</a>
+  <a href="/categories/%E9%89%B4%E6%9D%83/" class="category-chain-item">鉴权</a>
   
   
 
@@ -321,15 +355,15 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>设计模式-前言.md</div>
-      <div>https://lxfljw.github.io/2023/05/27/设计模式/前言/</div>
+      <div>1.1-Session，Token，JWT 原理解析</div>
+      <div>https://lxfljw.github.io/2023/10/22/鉴权/1-Session，Token，JWT 区别/</div>
     </div>
     <div class="license-meta">
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月27日</div>
+          <div>2023年10月22日</div>
         </div>
       
       
@@ -361,18 +395,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/22/%E9%89%B4%E6%9D%83/1-Session%EF%BC%8CToken%EF%BC%8CJWT%20%E5%8C%BA%E5%88%AB/" title="1.1-Session，Token，JWT 原理解析">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">1.1-Session，Token，JWT 原理解析</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/22/Git/%E5%A4%9A%E4%BB%93%E5%BA%93%E5%90%88%E5%B9%B6/" title="多仓库合并">
-                        <span class="hidden-mobile">多仓库合并</span>
+                      <a href="/2023/05/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%89%8D%E8%A8%80/" title="设计模式-前言.md">
+                        <span class="hidden-mobile">设计模式-前言.md</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
