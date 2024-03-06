@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
-    "preview": "vitepress preview",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs --port 8080"
+    "preview": "vitepress preview"
   },
   "keywords": [],
   "author": "",
