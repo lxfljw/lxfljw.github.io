@@ -1,11 +1,3 @@
----
-title: 1.1-Session，Token，JWT 原理解析
-date: 2023-10-22 23:51:39
-categories:
-- 鉴权
-tags:
----
-
 # 一、Session
 
 Session 是服务器端使用的一种记录客户端状态的机制，客户端通过 SessionID 来访问服务器端的资源，SessionID 一般是存在 Cookie 中的，也可以通过 URL 传递，但是不推荐这样做。
