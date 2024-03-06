@@ -8,13 +8,13 @@
     "build": "vitepress build",
     "preview": "vitepress preview",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs --port 8080"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.0-rc.41"
+    "vitepress": "1.0.0-rc.45"
   },
   "dependencies": {
     "vue": "^3.4.15"
