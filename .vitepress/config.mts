@@ -45,12 +45,12 @@ export default defineConfig({
         ],
       },
       {
-        text: "四、Vue3源码",
+        text: "四、Vue3",
         collapsed: true,
         items: [
           {
             text: "准备环境",
-            link: "/pages/Vue3源码系列/1、准备工作.md",
+            link: "/pages/Vue3/源码系列/1、准备工作.md",
           },
         ],
       },
