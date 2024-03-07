@@ -9,7 +9,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "主页", link: "/" },
-      { text: "我的文章", link: "/docs/设计模式/前言.md" },
+      { text: "我的文章", link: "/pages/设计模式/前言.md" },
     ],
 
     sidebar: [
@@ -17,11 +17,11 @@ export default defineConfig({
         text: "一、设计模式",
         collapsed: true,
         items: [
-          { text: "前言", link: "/docs/设计模式/前言.md" },
-          { text: "1-单例模式", link: "/docs/设计模式/1-单例模式.md" },
-          { text: "2-策略模式.md", link: "/docs/设计模式/2-策略模式.md" },
-          { text: "3-代理模式", link: "/docs/设计模式/3-代理模式.md" },
-          { text: "4-发布订阅模式", link: "/docs/设计模式/4-发布订阅模式.md" },
+          { text: "前言", link: "/pages/设计模式/前言.md" },
+          { text: "1-单例模式", link: "/pages/设计模式/1-单例模式.md" },
+          { text: "2-策略模式.md", link: "/pages/设计模式/2-策略模式.md" },
+          { text: "3-代理模式", link: "/pages/设计模式/3-代理模式.md" },
+          { text: "4-发布订阅模式", link: "/pages/设计模式/4-发布订阅模式.md" },
         ],
       },
       {
@@ -30,7 +30,7 @@ export default defineConfig({
         items: [
           {
             text: "1-Session，Token，JWT 区别",
-            link: "/docs/鉴权/1-Session，Token，JWT 区别.md",
+            link: "/pages/鉴权/1-Session，Token，JWT 区别.md",
           },
         ],
       },
@@ -40,7 +40,7 @@ export default defineConfig({
         items: [
           {
             text: "1-多仓库合并",
-            link: "/docs/Git/多仓库合并.md",
+            link: "/pages/Git/多仓库合并.md",
           },
         ],
       },
@@ -50,7 +50,7 @@ export default defineConfig({
         items: [
           {
             text: "准备环境",
-            link: "/docs/Vue3源码系列/1、准备工作.md",
+            link: "/pages/Vue3源码系列/1、准备工作.md",
           },
         ],
       },
