@@ -49,8 +49,24 @@ export default defineConfig({
         collapsed: true,
         items: [
           {
-            text: "准备环境",
+            text: "1、准备工作",
             link: "/pages/Vue3/源码系列/1、准备工作.md",
+          },
+        ],
+      },
+      {
+        text: "五、算法",
+        collapsed: true,
+        items: [
+          {
+            collapsed: true,
+            text: "数组",
+            items: [
+              {
+                text: "1、二分法查找",
+                link: "/pages/算法/数组/1、二分法查找.md",
+              },
+            ],
           },
         ],
       },
