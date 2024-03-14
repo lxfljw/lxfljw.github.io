@@ -68,6 +68,20 @@ export default defineConfig({
               },
             ],
           },
+          {
+            collapsed: true,
+            text: "链表",
+            items: [
+              {
+                text: "1、合并有序链表",
+                link: "/pages/算法/链表/1.合并有序链表.md",
+              },
+              {
+                text: "2.分隔链表",
+                link: "/pages/算法/链表/2.分隔链表.md",
+              },
+            ],
+          },
         ],
       },
     ],
