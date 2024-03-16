@@ -80,6 +80,10 @@ export default defineConfig({
                 text: "2.分隔链表",
                 link: "/pages/算法/链表/2.分隔链表.md",
               },
+              {
+                text: "3.合并K个有序链表",
+                link: "/pages/算法/链表/3.合并K个有序链表.md",
+              },
             ],
           },
         ],
