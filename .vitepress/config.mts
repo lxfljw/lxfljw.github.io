@@ -1,5 +1,12 @@
 import { defineConfig } from "vitepress";
 
+// TODO: 使用脚本自动生成目录
+// 1. 读取目录
+// 2. 生成目录
+// 3. 生成配置文件
+// 4. 生成页面
+// 5. 生成路由
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "码上秃的博客",
@@ -83,6 +90,10 @@ export default defineConfig({
               {
                 text: "3.合并K个有序链表",
                 link: "/pages/算法/链表/3.合并K个有序链表.md",
+              },
+              {
+                text: "4.反转链表",
+                link: "/pages/算法/链表/4.反转链表.md",
               },
             ],
           },
