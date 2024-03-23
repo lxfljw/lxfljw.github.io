@@ -16,6 +16,7 @@
   },
   "packageManager": "pnpm@7.33.1",
   "dependencies": {
+    "@types/node": "^20.11.30",
     "vue": "^3.4.15"
   }
 }
