@@ -46,7 +46,7 @@ function initSideBar() {
 
 const sidebar = initSideBar();
 
-console.log("%o sidebar", sidebar);
+console.log("%o sidebar-", sidebar);
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -54,6 +54,9 @@ export default defineConfig({
   description: "我的网站",
   base: "/",
   themeConfig: {
+    search: {
+      provider: "local",
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "主页", link: "/" },
