@@ -60,7 +60,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "主页", link: "/" },
-      { text: "我的文章", link: "/pages/设计模式/前言.md" },
+      { text: "博客列表", link: "/pages/设计模式/0-前言.md" },
     ],
     sidebar,
     socialLinks: [
