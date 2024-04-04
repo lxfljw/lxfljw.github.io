@@ -2,6 +2,40 @@ import { defineConfig } from "vitepress";
 import fs from "node:fs";
 import { resolve } from "node:path";
 
+function numberToChinese(num) {
+  const chineseNums = [
+    "零",
+    "一",
+    "二",
+    "三",
+    "四",
+    "五",
+    "六",
+    "七",
+    "八",
+    "九",
+  ];
+  const chineseUnits = ["", "十", "百", "千"];
+  if (num === 0) {
+    return chineseNums[0];
+  }
+  let chineseStr = "";
+  let unitIndex = 0;
+  while (num > 0) {
+    const digit = num % 10;
+    if (digit !== 0) {
+      // 处理非零数字
+      chineseStr = chineseNums[digit] + chineseUnits[unitIndex] + chineseStr;
+    } else if (chineseStr.charAt(0) !== chineseNums[0]) {
+      // 处理连续的零，只保留一个零
+      chineseStr = chineseNums[0] + chineseStr;
+    }
+    num = Math.floor(num / 10);
+    unitIndex++;
+  }
+  return chineseStr;
+}
+
 function initSideBar() {
   function noStartsWith(...args) {
     return function (name) {
@@ -38,9 +72,17 @@ function initSideBar() {
   const root = resolve(__dirname, "../pages");
   const rootDirs = fs.readdirSync(root).filter(noStartsWith("."));
 
-  const sidebar = rootDirs.map((dir) => {
-    return readDir(dir, resolve(root, dir), `pages`);
-  });
+  const sidebar = rootDirs
+    .map((dir) => {
+      return readDir(dir, resolve(root, dir), `pages`);
+    })
+    .map((item, index) => {
+      item.text = item.text.replace(
+        /^(\d+)-/,
+        (_, p1) => `${numberToChinese(p1)}、`
+      );
+      return item;
+    });
   return sidebar;
 }
 
@@ -60,7 +102,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "主页", link: "/" },
-      { text: "博客列表", link: "/pages/设计模式/0-前言.md" },
+      { text: "博客列表", link: "/pages/1-设计模式/0-前言.md" },
     ],
     sidebar,
     socialLinks: [

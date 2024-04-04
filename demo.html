@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="out">
+      <div class="center circle">
+        <div class="item item1 circle">文字 111</div>
+        <div class="item item2 circle">文字 22</div>
+      </div>
+    </div>
+
+    <style>
+      @keyframes circle {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes fancircle {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+      .out {
+        margin: 400px;
+      }
+      .circle {
+        border-radius: 50%;
+      }
+      .item1 {
+        left: 0;
+        top: -80px;
+        animation: fancircle 10s linear infinite;
+      }
+      .item2 {
+        left: -80px;
+        text-align: center;
+        animation: fancircle 10s linear infinite;
+      }
+      .item {
+        width: 50px;
+        height: 50px;
+        background: lightblue;
+        position: absolute;
+      }
+      .center {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background: orange;
+        animation: circle 10s linear infinite;
+      }
+    </style>
+  </body>
+</html>
