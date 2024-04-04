@@ -51,7 +51,7 @@ function initSideBar() {
     const isDir = fs.statSync(path).isDirectory();
     const text = removeExt(dir);
     // 资源文件夹不显示
-    if (dir.startsWith("assets-")) return null;
+    if (/^assets|image[s]|img[s]/.test(dir)) return null;
     if (isDir) {
       const dirs = fs.readdirSync(path).filter(noStartsWith("."));
       return {
