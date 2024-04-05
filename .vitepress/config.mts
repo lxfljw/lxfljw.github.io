@@ -54,6 +54,7 @@ function initSideBar() {
     if (/^assets|image[s]|img[s]/.test(dir)) return null;
     if (isDir) {
       const dirs = fs.readdirSync(path).filter(noStartsWith("."));
+
       return {
         text,
         collapsed: true,
@@ -88,7 +89,7 @@ function initSideBar() {
 
 const sidebar = initSideBar();
 
-console.log("%o sidebar-", sidebar);
+// console.log("%o sidebar-", sidebar);
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
