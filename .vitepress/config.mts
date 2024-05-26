@@ -105,7 +105,13 @@ export default defineConfig({
       { text: "主页", link: "/" },
       { text: "博客列表", link: "/pages/1-设计模式/0-前言.md" },
     ],
-    sidebar,
+    sidebar: [
+      ...sidebar,
+      {
+        text: "",
+        link: "/resume.md",
+      },
+    ],
     socialLinks: [
       { icon: "github", link: "https://github.com/lxfljw/lxfljw.github.io" },
     ],
