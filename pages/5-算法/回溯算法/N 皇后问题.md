@@ -77,7 +77,7 @@ var solveNQueens = function (n) {
       // 左上方斜线有 Q 不合法
       if (board[i][j] === "Q") return false;
     }
-
+    // 判断方位 3
     // 判断右上角
     for (let i = row, j = col; i >= 0 && j < n; i--, j++) {
       if (board[i][j] === "Q") return false;
