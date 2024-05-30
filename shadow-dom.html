@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadow DOM Example</title>
+  </head>
+  <body>
+    <custom-element></custom-element>
+
+    <script>
+      class CustomElement extends HTMLElement {
+        constructor() {
+          super();
+          // 创建一个 shadow root
+          const shadow = this.attachShadow({ mode: "open" });
+
+          // 创建内部结构
+          const wrapper = document.createElement("div");
+          wrapper.setAttribute("class", "wrapper");
+          const info = document.createElement("span");
+          info.setAttribute("class", "info");
+          info.textContent = "This is a shadow DOM component";
+
+          // 添加样式
+          const style = document.createElement("style");
+          style.textContent = `
+                    .wrapper {
+                        padding: 10px;
+                        background-color: #f3f3f3;
+                    }
+                    .info {
+                        color: blue;
+                    }
+                `;
+
+          // 将元素和样式添加到 shadow DOM 中
+          shadow.appendChild(style);
+          shadow.appendChild(wrapper);
+          wrapper.appendChild(info);
+        }
+      }
+
+      // 定义自定义元素
+      customElements.define("custom-element", CustomElement);
+    </script>
+  </body>
+</html>
