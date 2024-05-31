@@ -13,6 +13,8 @@ title: 我的简历
 
 TODO: 项目背景删除 OR 一句话描述 现在太过于冗长 -->
 
+<!-- vscode 调试 vue3 源码调试  微前端研究 -->
+
  <center>
      <h1>卢晓锋</h1>
  </center>
