@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ball Collision Explosion</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #000;
+      }
+      canvas {
+        border: 1px solid #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      class Ball {
+        constructor(x, y, radius, color, velocity) {
+          this.x = x;
+          this.y = y;
+          this.radius = radius;
+          this.color = color;
+          this.velocity = velocity;
+          this.opacity = 1;
+        }
+
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = this.opacity;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+          ctx.closePath();
+          ctx.restore();
+        }
+
+        update() {
+          this.draw();
+          this.x += this.velocity.x;
+          this.y += this.velocity.y;
+        }
+      }
+
+      let balls = [];
+      let particles = [];
+
+      function init() {
+        balls.push(
+          new Ball(100, canvas.height / 2, 30, "blue", { x: 2, y: 2 })
+        );
+        balls.push(
+          new Ball(canvas.width - 100, canvas.height / 2, 30, "red", {
+            x: -2,
+            y: -2,
+          })
+        );
+      }
+
+      function createExplosion(x, y) {
+        const particleCount = 20;
+        const angleIncrement = (Math.PI * 2) / particleCount;
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(
+            new Ball(x, y, 5, "orange", {
+              x: Math.cos(angleIncrement * i) * 4,
+              y: Math.sin(angleIncrement * i) * 4,
+            })
+          );
+        }
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        balls.forEach((ball, index) => {
+          ball.update();
+
+          // Check for collision
+          for (let i = index + 1; i < balls.length; i++) {
+            const dist = Math.hypot(ball.x - balls[i].x, ball.y - balls[i].y);
+            if (dist - ball.radius - balls[i].radius < 0) {
+              createExplosion(ball.x, ball.y);
+              balls.splice(i, 1);
+              balls.splice(index, 1);
+            }
+          }
+        });
+
+        particles.forEach((particle, index) => {
+          if (particle.opacity > 0) {
+            particle.update();
+            particle.opacity -= 0.02;
+          } else {
+            particles.splice(index, 1);
+          }
+        });
+      }
+
+      init();
+      animate();
+    </script>
+  </body>
+</html>
