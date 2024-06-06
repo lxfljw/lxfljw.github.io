@@ -47,6 +47,14 @@ function initSideBar() {
     return name.replace(/\.[^.]+$/, "");
   }
 
+  function sortDir(a, b) {
+    const splitSybol = ".";
+    const aindex = Number(a.split(splitSybol)[0]);
+    const bindex = Number(b.split(splitSybol)[0]);
+    if (isNaN(aindex)) return 1;
+    return aindex - bindex;
+  }
+
   function readDir(dir, path, rootPath) {
     const isDir = fs.statSync(path).isDirectory();
     const text = removeExt(dir);
@@ -58,7 +66,7 @@ function initSideBar() {
       return {
         text,
         collapsed: true,
-        items: dirs.map((name) => {
+        items: dirs.sort(sortDir).map((name) => {
           return readDir(name, resolve(path, name), `${rootPath}/${dir}`);
         }),
       };
@@ -96,14 +104,16 @@ export default defineConfig({
   title: "码上秃的博客",
   description: "我的网站",
   base: "/",
+  head: [["link", { rel: "icon", href: "/logo.awebp" }]],
   themeConfig: {
+    logo: "/logo.awebp",
     search: {
       provider: "local",
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "主页", link: "/" },
-      { text: "博客列表", link: "/pages/1-设计模式/0-前言.md" },
+      { text: "博客列表", link: "/pages/1-设计模式/0.前言.md" },
     ],
     sidebar: [
       ...sidebar,

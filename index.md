@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /pages/1-设计模式/0-前言.md
+      link: /pages/1-设计模式/0.前言.md
     - theme: alt
       text: 算法
       link: /pages/5-算法/链表/1.合并有序链表.md
