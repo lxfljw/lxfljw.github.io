@@ -20,7 +20,6 @@ export default {
     onMounted(() => {
       // mediumZoom("[data-zoomable]", { background: "var(--vp-c-bg)" });
       mediumZoom(".main img", { background: "var(--vp-c-bg)" });
-      console.log("启用？");
     });
   },
 } satisfies Theme;

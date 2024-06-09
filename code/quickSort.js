@@ -3,7 +3,7 @@
  * @param {number[]} arr
  * @returns {number[]}
  */
-function fastSort(arr) {
+function quickSort(arr) {
   function swap(a, b) {
     const t = arr[a];
     arr[a] = arr[b];
@@ -32,4 +32,4 @@ function fastSort(arr) {
   return arr;
 }
 
-console.log(fastSort([6, 2, 5, 3, 4]));
+console.log(quickSort([6, 2, 5, 3, 4]));
