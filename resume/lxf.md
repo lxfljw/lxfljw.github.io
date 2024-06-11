@@ -121,7 +121,7 @@ titleTemplate: false
 **技术要点**：
 
 Web 端：
-- 通过浏览器事件实现路由级别埋点，并根据路由匹配数据
+- 重写 history 的路由事件，并根据路由匹配数据
 - 拦截 createElement 和 onClick 函数，通过元素绑定的数据进行上报数据
 - 导出曝光组件，包裹需要曝光的内容，通过 IntersectionObserver API 实现曝光检测，并支持曝光配置时间后上报
 

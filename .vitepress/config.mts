@@ -119,7 +119,11 @@ export default defineConfig({
       ...sidebar,
       {
         text: "",
-        link: "/resume.md",
+        link: "/resume/lxf.md",
+      },
+      {
+        text: "",
+        link: "/resume/lm.md",
       },
     ],
     socialLinks: [
