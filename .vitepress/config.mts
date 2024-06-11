@@ -112,11 +112,17 @@ export default defineConfig({
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
+      { text: "目录导航", link: "/link-list/index.md" },
       { text: "主页", link: "/" },
-      { text: "博客列表", link: "/pages/1-设计模式/0.前言.md" },
     ],
     sidebar: [
       ...sidebar,
+      // 目录
+      {
+        text: "",
+        link: "/link-list/link-list.md",
+      },
+      // 简历 不声明也可以 这里是防止忘记
       {
         text: "",
         link: "/resume/lxf.md",
