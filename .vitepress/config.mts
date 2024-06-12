@@ -85,7 +85,7 @@ function initSideBar() {
     .map((dir) => {
       return readDir(dir, resolve(root, dir), `pages`);
     })
-    .map((item, index) => {
+    .map((item) => {
       item.text = item.text.replace(
         /^(\d+)-/,
         (_, p1) => `${numberToChinese(p1)}、`
