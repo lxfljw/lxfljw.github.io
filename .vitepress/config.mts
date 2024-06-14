@@ -136,4 +136,7 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/lxfljw/lxfljw.github.io" },
     ],
   },
+  markdown: {
+    lineNumbers: true,
+  },
 });
