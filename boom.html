@@ -3,117 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ball Collision Explosion</title>
+    <title>纯css菜单</title>
+    <link rel="stylesheet" href="1.css" />
+  </head>
+
+  <body>
     <style>
-      body {
+      * {
         margin: 0;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #000;
+        padding: 0;
       }
-      canvas {
-        border: 1px solid #fff;
+      .accordion {
+        width: 300px;
+      }
+      .accordion article {
+        cursor: pointer;
+      }
+      .accordion article + article {
+        margin-top: 5px;
+      }
+      .accordion label {
+        display: block;
+        height: 40px;
+        padding: 0 20px;
+        background-color: #f00;
+        cursor: pointer;
+        line-height: 40px;
+        font-size: 16px;
+        color: #fff;
+      }
+      .accordion p {
+        overflow: hidden;
+        padding: 0 20px;
+        border: 1px solid #f66;
+        border-top: none;
+        border-bottom-width: 0;
+        max-height: 0;
+        line-height: 30px;
+        transition: all 500ms;
+      }
+      .accordion input:nth-child(1):checked ~ article:nth-of-type(1) p,
+      .accordion input:nth-child(2):checked ~ article:nth-of-type(2) p,
+      .accordion input:nth-child(3):checked ~ article:nth-of-type(3) p {
+        max-height: 600px;
       }
     </style>
-  </head>
-  <body>
-    <canvas id="canvas"></canvas>
-    <script>
-      const canvas = document.getElementById("canvas");
-      const ctx = canvas.getContext("2d");
 
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      class Ball {
-        constructor(x, y, radius, color, velocity) {
-          this.x = x;
-          this.y = y;
-          this.radius = radius;
-          this.color = color;
-          this.velocity = velocity;
-          this.opacity = 1;
-        }
-
-        draw() {
-          ctx.save();
-          ctx.globalAlpha = this.opacity;
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-          ctx.fillStyle = this.color;
-          ctx.fill();
-          ctx.closePath();
-          ctx.restore();
-        }
-
-        update() {
-          this.draw();
-          this.x += this.velocity.x;
-          this.y += this.velocity.y;
-        }
-      }
-
-      let balls = [];
-      let particles = [];
-
-      function init() {
-        balls.push(
-          new Ball(100, canvas.height / 2, 30, "blue", { x: 2, y: 2 })
-        );
-        balls.push(
-          new Ball(canvas.width - 100, canvas.height / 2, 30, "red", {
-            x: -2,
-            y: -2,
-          })
-        );
-      }
-
-      function createExplosion(x, y) {
-        const particleCount = 20;
-        const angleIncrement = (Math.PI * 2) / particleCount;
-        for (let i = 0; i < particleCount; i++) {
-          particles.push(
-            new Ball(x, y, 5, "orange", {
-              x: Math.cos(angleIncrement * i) * 4,
-              y: Math.sin(angleIncrement * i) * 4,
-            })
-          );
-        }
-      }
-
-      function animate() {
-        requestAnimationFrame(animate);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        balls.forEach((ball, index) => {
-          ball.update();
-
-          // Check for collision
-          for (let i = index + 1; i < balls.length; i++) {
-            const dist = Math.hypot(ball.x - balls[i].x, ball.y - balls[i].y);
-            if (dist - ball.radius - balls[i].radius < 0) {
-              createExplosion(ball.x, ball.y);
-              balls.splice(i, 1);
-              balls.splice(index, 1);
-            }
-          }
-        });
-
-        particles.forEach((particle, index) => {
-          if (particle.opacity > 0) {
-            particle.update();
-            particle.opacity -= 0.02;
-          } else {
-            particles.splice(index, 1);
-          }
-        });
-      }
-
-      init();
-      animate();
-    </script>
+    <div class="accordion">
+      <input type="checkbox" id="collapse1" hidden />
+      <input type="checkbox" id="collapse2" hidden />
+      <input type="checkbox" id="collapse3" hidden />
+      <!-- div替代品 html5语义化标签 SEO比较重要 -->
+      <article>
+        <label for="collapse1">列表1</label>
+        <p>内容1</p>
+        <p>内容2</p>
+        <p>内容3</p>
+        <p>内容4</p>
+      </article>
+      <article>
+        <label for="collapse2">列表2</label>
+        <p>内容1</p>
+        <p>内容2</p>
+        <p>内容3</p>
+        <p>内容4</p>
+      </article>
+      <article>
+        <label for="collapse3">列表3</label>
+        <p>内容1</p>
+        <p>内容2</p>
+        <p>内容3</p>
+        <p>内容4</p>
+      </article>
+    </div>
   </body>
 </html>
