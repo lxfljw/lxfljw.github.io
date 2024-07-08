@@ -27,7 +27,7 @@ titleTemplate: false
 </div> 
 <div class="info-wrap">
     <span class="info-label"> 专 业：通信工程</span>
-    <span class="info-item">岗 位：资深前端开发工程师</span>
+    <span class="info-item">岗 位：高级前端开发工程师</span>
 </div> 
 
 
@@ -37,7 +37,7 @@ titleTemplate: false
 <div class="company-wrap">
     <span class="company-name">深圳市兔展智能科技有限公司</span>
     <span>2020.07~2024.05</span>
-    <span>资深前端开发</span>
+    <span>高级前端开发</span>
 </div>
 
 <div class="company-wrap">
@@ -57,11 +57,11 @@ titleTemplate: false
 
 - 熟练掌握前端开发技术（HTML5、JavaScript、ES6、CSS3 等）
 - 熟练掌握 Vue、React 及相关生态技术，了解实现原理
-- 具有多端开发经验，熟练使用 Taro、Uni-app 等框架
+- 有小程序开发经验，熟练使用 Taro、Uni-app 等框架
 - 对前端工程化有实践经验，熟练使用 Webpack、Vite  等构建工具
-- 掌握计算机网络原理，对前端网络安全有一定的研究
-- 了解浏览器渲染原理、页面性能优化及用户体验的提升
-- 了解 Node.js、MySQL、Nginx、Docker 等服务端知识
+- 了解浏览器渲染原理
+- 了解计算机网络原理，了解前端安全
+- 了解 Node.js、Redis，MySQL、Nginx、Docker 等服务端知识
 
 
 ## 项目经历
