@@ -1,6 +1,6 @@
 (async function hello() {
-  // const bf = Buffer.from("Hello, world!", "utf8");
-  // console.log(bf);
+  const bf = Buffer.from("Hello, world!", "utf8");
+  console.log(bf);
 
   async function async1() {
     console.log("1");
