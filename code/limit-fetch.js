@@ -42,3 +42,5 @@ function pLimit(limit) {
     });
   };
 }
+
+// 先把所有的任务推入队列，使用一个 count 计数当前执行的 promise，如果 count>limit，则不从队列拿，如果小于，则从队列那拿一个任务执行，执行完后 count--，然后 schedule 继续判断是否执行。

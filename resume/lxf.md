@@ -18,7 +18,7 @@ titleTemplate: false
 ## 个人信息
 
 <div class="info-wrap">
-    <span class="info-label">性 别：男</span>
+    <span class="info-label">岗 位：高级前端开发工程师</span>
     <span class="info-item">经 验：6 年</span>
 </div> 
 <div class="info-wrap">
@@ -26,8 +26,8 @@ titleTemplate: false
     <span class="info-item">邮 箱：lxfljw@gmail.com</span>
 </div> 
 <div class="info-wrap">
-    <span class="info-label"> 专 业：通信工程</span>
-    <span class="info-item">岗 位：高级前端开发工程师</span>
+    <span class="info-label"> 学校：华东交通大学</span>
+    <span class="info-item"> 专 业：通信工程（本科）</span>
 </div> 
 
 
