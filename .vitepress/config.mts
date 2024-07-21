@@ -13,7 +13,17 @@ export default defineConfig({
   title: "码上秃的博客",
   description: "我的网站",
   base: "/",
-  head: [["link", { rel: "icon", href: "/logo.awebp" }]],
+  head: [
+    ["link", { rel: "icon", href: "/logo.awebp" }],
+    // <meta name="baidu-site-verification" content="codeva-ypCbR4Xoyf" />
+    [
+      "meta",
+      {
+        name: "baidu-site-verification",
+        content: "codeva-ypCbR4Xoyf",
+      },
+    ],
+  ],
   themeConfig: {
     logo: "/logo.awebp",
     search: {
