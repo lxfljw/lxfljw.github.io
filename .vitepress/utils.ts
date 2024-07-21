@@ -94,4 +94,4 @@ export function initSideBar() {
   return sidebar;
 }
 
-export const HOST_NAME = "https://lxfljw.github.io";
+export const HOST_NAME = "https://lxfljw.cn";
