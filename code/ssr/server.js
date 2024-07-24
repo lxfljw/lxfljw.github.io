@@ -1,32 +1,31 @@
-import express from "express";
-import * as reactServer from "react-dom/server";
-import Home from "./Home.js";
-import React from "react";
+function asyncAdd(a, b, callback) {
+  setTimeout(function () {
+    callback(a + b);
+  }, 1000);
+}
 
-const app = express();
+function sum(...args) {
+  function fn(nums) {
+    const pList = [];
+    const len = nums.length;
+    if (len === 0) return Promise.resolve(0);
+    if (len === 1) return Promise.resolve(nums[0]);
+    // return new Pro
+    let i = 0;
+    while (i < nums.length) {
+      pList.push(
+        new Promise((resolve) => {
+          const next = typeof nums[i + 1] === "number" ? nums[i + 1] : 0;
+          asyncAdd(nums[i], next, resolve);
+        })
+      );
+      i += 2;
+    }
+    return Promise.all(pList).then((res) => {
+      return fn(res);
+    });
+  }
+  return fn(args);
+}
 
-const content = reactServer.renderToString(React.createElement(Home));
-
-app.get("/", (req, res) => {
-  res.setHeader("Content-Type", "text/html");
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Set-Cookie", "sid=kljsadflkjkljkljkalsdjf;p=asdfk1");
-  res.send(`
-    <html>
-      <head>
-        <title>ssr</title>
-      </head>
-      <body>
-        <div id="root">${content}</div>
-        <script src="index.js"></script>
-      </body>
-    </html>
-   `);
-});
-
-app.use(express.static("public"));
-
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-  console.log("http://localhost:3000");
-});
+sum(1, 2, 3, 4, 5).then((result) => console.log(result));
