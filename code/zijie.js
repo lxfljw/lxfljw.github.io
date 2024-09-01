@@ -23,7 +23,7 @@ function fn(number) {
  */
 function fn1(number) {
   const str = number.toString();
-  return str.replace(/\B(?=(\d{3})+)/g, ",");
+  return str.replace(/\B(?=(\d{3})+$)/g, ",");
 }
 
 /**
