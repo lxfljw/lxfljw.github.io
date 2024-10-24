@@ -3,7 +3,7 @@ navbar: false
 sidebar: false
 next: false
 pre: false
-title: 卢晓锋的简历
+title: 卢晓龙的简历
 titleTemplate: false
 ---
 
