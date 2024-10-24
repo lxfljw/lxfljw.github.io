@@ -6,12 +6,39 @@
     <title>Document</title>
   </head>
   <body>
+    <script>
+      function test() {
+        console.log("test");
+      }
+      function test1() {
+        console.log("test1");
+      }
+      document.addEventListener(
+        "click",
+        (e) => {
+          const aLink = e.target.closest("a");
+          if (aLink) {
+            e.preventDefault();
+            alert(`${aLink.href} 危险⚠️`);
+            window.open(aLink.href, aLink.target);
+            return false;
+          }
+          console.log("非 a 标签");
+        },
+        false
+      );
+    </script>
     <div class="out">
-      <div id="center" class="center circle">
-        <div id="item1" class="item item1 circle">文字 111</div>
+      <div id="center" class="center circle" onclick="test()">
+        <a target="_blank" href="http://www.baidu.com">百度</a>
+        <a target="_blank" href="http://www.google.com">谷歌</a>
+        <a target="_blank" href="http://www.sogou.com">搜狗</a>
+        <a target="_blank" href="http://www.bing.com">必应</a>
+        <div>阿萨夫</div>
+        <!-- <div id="item1" class="item item1 circle">文字 111</div>
         <div id="item2" class="item item2 circle">文字 22</div>
         <div id="item3" class="item item2 circle">文字 33</div>
-        <div id="item4" class="item item2 circle">文字 44</div>
+        <div id="item4" class="item item2 circle">文字 44</div> -->
       </div>
     </div>
 

@@ -22,3 +22,13 @@ Father.prototype.getFamily = function () {
 function Child() {
   this.name = "child";
 }
+
+class Test {
+  #a = 1;
+  constructor() {
+    this.#a = 2;
+  }
+  getA() {
+    return this.#a;
+  }
+}
