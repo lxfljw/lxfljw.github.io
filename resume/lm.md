@@ -22,11 +22,11 @@ titleTemplate: false
     <span class="info-item">经 验：16 年</span>
 </div> 
 <div class="info-wrap">
-    <span class="info-label">手 机：152xxxx9307</span>
-    <span class="info-item">邮 箱：xx.com</span>
+    <span class="info-label">手 机：152xxxxxxx</span>
+    <span class="info-item">邮 箱：lumiao@gmail.com</span>
 </div> 
 <div class="info-wrap">
-    <span class="info-label"> 专 业：x'x'x'x</span>
+    <span class="info-label"> 专 业：数字电路</span>
     <span class="info-item">岗 位：技术专家</span>
 </div> 
 
