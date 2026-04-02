@@ -5,7 +5,12 @@ next: false
 pre: false
 title: 卢晓锋的简历
 titleTemplate: false
+pageClass: resume-lxf
 ---
+
+<div class="resume-pdf-header">
+  <a href="https://luxiaofeng.site" target="_blank" rel="noopener noreferrer">luxiaofeng.site</a>
+</div>
 
  <center>
  <h1>卢晓锋</h1>
@@ -186,6 +191,34 @@ Web 端：
 
 
 <style>
+    .resume-pdf-header {
+        display: none;
+    }
+    @media print {
+        .resume-lxf .resume-pdf-header {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            text-align: center;
+            font-size: 10pt;
+            padding: 6px 12px 10px;
+            border-bottom: 1px solid #999;
+            background: #fff;
+        }
+        .resume-lxf .resume-pdf-header a {
+            color: #333;
+            text-decoration: none;
+        }
+        /* 避免首屏正文与固定页眉重叠 */
+        .resume-lxf .VPContent,
+        .resume-lxf .vp-doc {
+            padding-top: 36px;
+        }
+    }
+
     .info-wrap {
         display: flex;
         align-items: center;

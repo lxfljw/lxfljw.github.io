@@ -1,9 +1,8 @@
 // https://vitepress.dev/guide/custom-theme
-import { h, toRefs, defineComponent } from "vue";
+import { h, toRefs } from "vue";
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { onMounted } from "vue";
-import ResumeSiteHeader from "./ResumeSiteHeader.vue";
 // import mediumZoom from "medium-zoom";
 import "viewerjs/dist/viewer.min.css";
 import imageViewer from "vitepress-plugin-image-viewer";
@@ -14,16 +13,7 @@ import "./style.css";
 
 export default {
   extends: DefaultTheme,
-  // 页顶条（layout-top）：见 https://vitepress.dev/guide/extending-default-theme#layout-slots
-  Layout: defineComponent({
-    name: "CustomLayout",
-    setup() {
-      return () =>
-        h(DefaultTheme.Layout, null, {
-          "layout-top": () => h(ResumeSiteHeader),
-        });
-    },
-  }),
+  Layout: () => h(DefaultTheme.Layout),
   enhanceApp({ app, router, siteData }) {
     // 注册全局组件，如果你不想使用也可以不添加
     app.component("vImageViewer", vImageViewer);
