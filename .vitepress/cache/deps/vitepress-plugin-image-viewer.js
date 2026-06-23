@@ -2,12 +2,11 @@ import {
   nextTick,
   onMounted,
   watch
-} from "./chunk-X4OMJE4A.js";
+} from "./chunk-WDWT2DYE.js";
 
 // node_modules/.pnpm/viewerjs@1.11.7/node_modules/viewerjs/dist/viewer.esm.js
 function _classCallCheck(a, n) {
-  if (!(a instanceof n))
-    throw new TypeError("Cannot call a class as a function");
+  if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
 }
 function _defineProperties(e, r) {
   for (var t = 0; t < r.length; t++) {
@@ -50,13 +49,11 @@ function _objectSpread2(e) {
   return e;
 }
 function _toPrimitive(t, r) {
-  if ("object" != typeof t || !t)
-    return t;
+  if ("object" != typeof t || !t) return t;
   var e = t[Symbol.toPrimitive];
   if (void 0 !== e) {
     var i = e.call(t, r || "default");
-    if ("object" != typeof i)
-      return i;
+    if ("object" != typeof i) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r ? String : Number)(t);
@@ -2817,7 +2814,7 @@ var Viewer = function() {
 }();
 assign(Viewer.prototype, render, events, handlers, methods, others);
 
-// node_modules/.pnpm/vitepress-plugin-image-viewer@1.1.5/node_modules/vitepress-plugin-image-viewer/lib/viewer.js
+// node_modules/.pnpm/vitepress-plugin-image-viewer@1.1.6/node_modules/vitepress-plugin-image-viewer/lib/viewer.js
 var viewer = null;
 var setViewer = (el = ".vp-doc", option) => {
   const defaultBaseOption = {
@@ -2832,10 +2829,13 @@ var setViewer = (el = ".vp-doc", option) => {
       oneToOne: 4
     }
   };
-  viewer = new Viewer(document.querySelector(el), {
-    ...defaultBaseOption,
-    ...option
-  });
+  const container = document.querySelector(el);
+  if (container) {
+    viewer = new Viewer(container, {
+      ...defaultBaseOption,
+      ...option
+    });
+  }
 };
 var imageViewer = (route, el, option) => {
   onMounted(() => {

@@ -27,7 +27,9 @@ export default {
     const { frontmatter } = toRefs(useData());
 
     // 评论组件
-    initGiscus();
+    if (!route.path.startsWith("/resume/lxf")) {
+      initGiscus();
+    }
 
     onMounted(() => {
       // 图片预览组件
