@@ -13,11 +13,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@braintree/sanitize-url": "^7.1.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "cytoscape": "^3.34.0",
+    "cytoscape-cose-bilkent": "^4.1.0",
+    "dayjs": "^1.11.21",
+    "debug": "^4.4.3",
+    "mermaid": "^11.15.0",
     "nodemon": "^3.1.4",
     "swc-loader": "^0.2.6",
     "vitepress": "1.0.0-rc.45",
+    "vitepress-plugin-mermaid": "^2.0.17",
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
   },

@@ -1,12 +1,17 @@
 import { defineConfig } from "vitepress";
+import { createRequire } from "node:module";
 import { HOST_NAME, initSideBar } from "./utils";
 import giscusTalk from "vitepress-plugin-comment-with-giscus";
+import { withMermaid } from "vitepress-plugin-mermaid";
+const require = createRequire(import.meta.url);
+const dayjsEsmEntry = require.resolve("dayjs/esm/index.js");
 const sidebar = initSideBar();
 
 // console.log("%o sidebar-", sidebar);
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid(
+  defineConfig({
   sitemap: {
     hostname: HOST_NAME,
   },
@@ -59,4 +64,15 @@ export default defineConfig({
   markdown: {
     lineNumbers: true,
   },
-});
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^dayjs$/,
+          replacement: dayjsEsmEntry,
+        },
+      ],
+    },
+  },
+})
+);

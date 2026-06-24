@@ -1,3 +1,5 @@
+import "./chunk-BUSYA2B4.js";
+
 // node_modules/.pnpm/@giscus+vue@2.4.0_vue@3.5.38/node_modules/@giscus/vue/dist/giscus-aTimukGI.mjs
 var H = globalThis;
 var q = H.ShadowRoot && (H.ShadyCSS === void 0 || H.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype;
@@ -1016,4 +1018,4 @@ export {
    * SPDX-License-Identifier: BSD-3-Clause
    *)
 */
-//# sourceMappingURL=giscus-aTimukGI-EUC7C6Q2.js.map
+//# sourceMappingURL=giscus-aTimukGI-FCEW477P.js.map

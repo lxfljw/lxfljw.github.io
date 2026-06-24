@@ -3,6 +3,7 @@ import {
   onMounted,
   watch
 } from "./chunk-WDWT2DYE.js";
+import "./chunk-BUSYA2B4.js";
 
 // node_modules/.pnpm/viewerjs@1.11.7/node_modules/viewerjs/dist/viewer.esm.js
 function _classCallCheck(a, n) {
