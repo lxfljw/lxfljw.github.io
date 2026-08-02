@@ -19,7 +19,7 @@ pageClass: resume-lxf
 ## 个人信息
 
 <div class="info-wrap">
-    <span class="info-label">岗 位：高级前端开发</span>
+    <span class="info-label">岗 位：高级前端开发（全栈）</span>
     <span class="info-item">网 站：<a href="https://luxiaofeng.site" target="_blank" rel="noopener noreferrer">luxiaofeng.site</a></span>
 </div> 
 <div class="info-wrap">
@@ -33,9 +33,9 @@ pageClass: resume-lxf
 
 ## 个人优势
 
-- 8 年前端经验，熟练掌握 Vue、React，熟悉 Taro、UniApp 等多端小程序开发，熟悉 Webpack、Vite、pnpm、Node.js、CI/CD；具备 SaaS、B 端复杂项目从 0 到 1 落地经验，主导过技术栈升级、组件体系、依赖及构建优化。
-- 1 年+前端管理经验，负责 3 名前端的需求评审、任务拆分、排期、Code Review 及跨团队交付。
 - 近 2 年全栈开发经验，具备 BFF、Java 服务端开发能力，熟悉 Spring Boot、MySQL、Redis、NSQ 等后端技术。
+- 8 年前端经验，熟练掌握 Vue、React，熟悉 Taro、UniApp 等多端小程序开发；具备 SaaS、B 端复杂项目从 0 到 1 落地经验，主导过技术栈升级、组件体系、依赖及构建优化，熟悉 Webpack、Vite、pnpm、Node.js、CI/CD。
+- 1 年+前端管理经验，负责 3 名前端的需求评审、任务拆分、排期、Code Review 及跨团队交付。
 - 熟练使用 Claude Code、Codex、Cursor 等 AI 编程工具，日常基于 OpenSpec 以 SDD（规格驱动开发）推进需求落地。
 - 具备 AI 研发工程化实践，自研并推广团队级 dev-flow MCP，将日志、数据库、接口与发布能力接入 IDE；支持一键配置到 Cursor、Claude Desktop、Claude Code 等主流 AI 客户端。
 
@@ -44,11 +44,11 @@ pageClass: resume-lxf
 <div class="company-wrap">
     <span class="company-name">有赞科技有限公司</span>
     <span>2024.07~2026.05</span>
-    <span>高级前端开发</span>
+    <span>高级前端开发（全栈）</span>
 </div>
 
-- 负责美业 SaaS 前端业务开发，覆盖 CRM、用户权益、标签分层及运营触达等核心场景，主导 CRM 工程级定制化方案落地；并参与部分 Spring Boot 服务端开发。
-- 推进 Yarn 向 pnpm 迁移、Node 升级及 CI 流程适配等工程效能治理。
+- 负责美业 SaaS 全栈业务开发，覆盖 CRM、用户权益、标签分层及运营触达等核心场景；主导 CRM 工程级定制化方案，并负责权益过期标签刷新、商品提审与 POI 绑定等服务端能力落地。
+- 推进 Yarn 向 pnpm 迁移、Node 升级及 CI 流程适配等前端工程效能治理。
 - 主导 dev-flow MCP Server 建设，将日志、DB、接口和发布能力接入 AI 研发工作流，并支持一键配置到主流 AI 客户端。
 
 <div class="company-wrap">
@@ -73,14 +73,14 @@ pageClass: resume-lxf
 
 ### **1、有赞美业 SaaS 系统** <span class="time">有赞科技 · 2024.07 - 2026.05</span>
 
-**项目角色**：高级前端开发
+**项目角色**：高级前端开发（全栈）
 
 **主要技术栈**：React、Vue、UniApp、TypeScript、Webpack、pnpm、Node.js、Java、Spring Boot、MySQL、NSQ、Apollo
 
-- **CRM 多环境定制**：主导 CRM 多环境可扩展架构设计，通过配置动态生成 Resolver 与 TypeScript 类型文件，实现不同环境下的模块解析与类型一致性，并支持差异化能力覆盖及标品自动回退。
-- **AI 研发工作流（dev-flow MCP）**：面向线上问题排查与修复，主导建设团队级 AI Native 研发基础设施。将日志、数据库、内部接口与发布能力抽象为 MCP 工具并接入 IDE，沉淀以 TraceId 为入口的跨系统诊断工作流，并建立 SQL 风险分析、写操作拦截与调用审计等安全治理能力；同时提供一键配置能力，自动完成环境安装与 MCP / Skills 写入，覆盖 Cursor、Claude Desktop、Claude Code 等主流 AI 客户端。推广至团队约 **30 人**使用，将原先依赖多系统人工排查的流程收敛为 IDE 内一站式诊断。
 - **小红书小程序**：在 3 个月内基于 UniApp 独立完成前端从 0 到 1 建设，覆盖商品配置、详情、支付及订单等核心交易页面；并参与部分 Spring Boot 后端开发，负责商品提审、POI 绑定等能力，打通商品配置、交易下单与到店核销链路；上线后负责全部前后端维护。
 - **权益过期与标签刷新**：负责后端方案设计及 Java 实现，通过 MySQL 增量查询、分批聚合与 **NSQ** 消息通知业务方完成标签更新，以增量处理替代全量重算，解决权益过期后业务方无法及时感知的问题。
+- **CRM 多环境定制**：主导 CRM 多环境可扩展架构设计，通过配置动态生成 Resolver 与 TypeScript 类型文件，实现不同环境下的模块解析与类型一致性，并支持差异化能力覆盖及标品自动回退。
+- **AI 研发工作流（dev-flow MCP）**：面向线上问题排查与修复，主导建设团队级 AI Native 研发基础设施。将日志、数据库、内部接口与发布能力抽象为 MCP 工具并接入 IDE，沉淀以 TraceId 为入口的跨系统诊断工作流，并建立 SQL 风险分析、写操作拦截与调用审计等安全治理能力；同时提供一键配置能力，自动完成环境安装与 MCP / Skills 写入，覆盖 Cursor、Claude Desktop、Claude Code 等主流 AI 客户端。推广至团队约 **30 人**使用，将原先依赖多系统人工排查的流程收敛为 IDE 内一站式诊断。
 - **域名容灾**：基于 Apollo 配置中心设计多端域名映射方案，统一 Web 与小程序运行环境的域名切换规则，支持 DNS 异常时通过配置快速切换，保障静态资源与接口可用。
 - **微信小程序质量保障**：基于 `miniprogram-automator` 建设全页面白屏检测，通过页面截图与报告生成辅助定位白屏问题，并对核心下单链路补充 E2E 回归；同时预留约定式扫描扩展，页面侧新增 `*.spec.ts` 即可自动纳入自定义测试流程，保障包管理器升级及日常迭代后的页面可用性。
 - **pnpm 迁移与依赖治理**：制定包管理器与运行时平滑升级方案，通过版本锁定、兼容层和 CI 一致性治理解决依赖兼容、版本冲突及多项目重复占用问题。依赖安装耗时由约 **3 分钟缩短至 30 秒**，线上 CI 由约 **3 分半缩短至 1 分半**。
