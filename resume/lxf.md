@@ -9,7 +9,7 @@ pageClass: resume-lxf
 ---
 
 <div class="resume-pdf-header">
-  <a href="https://luxiaofeng.site" target="_blank" rel="noopener noreferrer">luxiaofeng.site</a>
+  <a href="https://luxiaofeng.site" target="_blank" rel="noopener noreferrer">luxiaofeng.tech</a>
 </div>
 
  <center>
@@ -27,7 +27,7 @@ pageClass: resume-lxf
     <span class="info-item">邮 箱：luxiaofeng.code@gmail.com</span>
 </div> 
 <div class="info-wrap">
-    <span class="info-label">学 校：华东交通大学</span>
+    <span class="info-label">学 校：华东交通大学 (2014-2018)</span>
     <span class="info-item">专 业：通信工程（本科）</span>
 </div>
 
