@@ -9,7 +9,7 @@ pageClass: resume-lxf
 ---
 
 <div class="resume-pdf-header">
-  <a href="https://luxiaofeng.site" target="_blank" rel="noopener noreferrer">luxiaofeng.tech</a>
+  <a href="https://luxiaofeng.tech" target="_blank" rel="noopener noreferrer">luxiaofeng.tech</a>
 </div>
 
  <center>
@@ -20,7 +20,7 @@ pageClass: resume-lxf
 
 <div class="info-wrap">
     <span class="info-label">岗 位：高级前端开发（全栈）</span>
-    <span class="info-item">网 站：<a href="https://luxiaofeng.site" target="_blank" rel="noopener noreferrer">luxiaofeng.site</a></span>
+    <span class="info-item">网 站：<span href="https://luxiaofeng.site" target="_blank" rel="noopener noreferrer">luxiaofeng.tech</span></span>
 </div> 
 <div class="info-wrap">
     <span class="info-label">手 机：15279189307</span>

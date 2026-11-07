@@ -44,18 +44,29 @@
 // sanbox(code)();
 
 function createSanbox(code) {
-  const whiteList = ["console"];
+  const whiteList = ["console", "setTimeout"];
   const proxyWindow = new Proxy(window, {
-    has(target, key) {
+    get(target, key, receiver) {
+      const value = Reflect.get(target, key, receiver);
       if (whiteList.includes(key)) {
-        return false;
+        if (typeof value === "function") {
+          return value.bind(target);
+        }
       }
-      return target.hasOwnProperty(key);
+      return value;
     },
-    x,
+    has(target, key, receiver) {
+      if (whiteList.includes(key)) {
+        return true;
+      }
+      return Reflect.has(target, key, receiver);
+    },
   });
-
+  console.log("code", `with(proxyWindow){${code}}`);
+  proxyWindow.setTimeout(() => {
+    console.log("setTimeout");
+  }, 1000);
   return new Function("proxyWindow", `with(proxyWindow){${code}}`)(proxyWindow);
 }
-const code = `console.log(123);`;
+const code = `console.log(123);setTimeout(() => {console.log(456);}, 1000);`;
 const sanbox = createSanbox(code);
